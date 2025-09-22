@@ -7,49 +7,7 @@
   <meta name="description" content="Portfolio website for Tankiso Phoofolo — SIEM, Splunk dashboards, log analysis." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header>
-    <h1>Tankiso Phoofolo</h1>
-    <p>Cybersecurity Analyst</p>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>About me</h2>
-    <p>Hi, I'm Tankiso. My best kinds of projects are ones that are meaningful to me. Take a look at some of my work below</p>
-  </section>
-
-  <section id="projects" class="projects">
-    <div class="project">
-      <img src="Images/Splunk dashboard_Best_edited.jpg" alt="SIEM dashboard screenshot">
-      <div class="project-content">
-        <h3>SIEM & Threat Monitoring</h3>
-        <p>A consolidated dashboard ingesting logs from routers, EDR, IDS/IPS, vulnerability scanners, and network controllers.</p>
-        <div class="tags">
-          <span class="tag">Splunk</span>
-          <span class="tag">Sophos</span>
-          <span class="tag">Snort</span>
-          <span class="tag">Nessus</span>
-          <span class="tag">Qualys</span>
-          <span class="tag">Ubiquiti</span>
-        </div>
-      </div>
-    </div>
-
-    
-  </section>
-
-  <footer>
-    <p>© 2025 Tankiso Phoofolo — Built for success</p>
-  </footer>
-</body>
-</html>
-
-body {
+  body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #22203f, #0d0d0d);
@@ -162,3 +120,46 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
 }
+
+<body>
+  <header>
+    <h1>Tankiso Phoofolo</h1>
+    <p>Cybersecurity Analyst</p>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>About me</h2>
+    <p>Hi, I'm Tankiso. My best kinds of projects are ones that are meaningful to me. Take a look at some of my work below</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="project">
+      <img src="Images/Splunk dashboard_Best_edited.jpg" alt="SIEM dashboard screenshot">
+      <div class="project-content">
+        <h3>SIEM & Threat Monitoring</h3>
+        <p>A consolidated dashboard ingesting logs from routers, EDR, IDS/IPS, vulnerability scanners, and network controllers.</p>
+        <div class="tags">
+          <span class="tag">Splunk</span>
+          <span class="tag">Sophos</span>
+          <span class="tag">Snort</span>
+          <span class="tag">Nessus</span>
+          <span class="tag">Qualys</span>
+          <span class="tag">Ubiquiti</span>
+        </div>
+      </div>
+    </div>
+
+    
+  </section>
+
+  <footer>
+    <p>© 2025 Tankiso Phoofolo — Built for success</p>
+  </footer>
+</body>
+</html>
+
