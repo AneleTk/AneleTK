@@ -26,6 +26,12 @@ header p {
   color: #db9826;
 }
 
+header h2 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #db9826;
+}
+
 nav {
   margin-top: 1rem;
 }
