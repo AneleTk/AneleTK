@@ -113,4 +113,9 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
 }
-```
+
+a .project{
+  text-decoration: none;
+  color: #9e9a9a;
+
+}
