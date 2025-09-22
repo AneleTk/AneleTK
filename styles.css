@@ -82,6 +82,15 @@ nav a:hover {
   float: left;
 }
 
+.standaloneIMG img {
+  display: block;
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
 .project-content {
   padding: 1rem;
 }
@@ -114,8 +123,19 @@ footer {
   color: #aaa;
 }
 
-a .project{
+a{
   text-decoration: none;
   color: #9e9a9a;
 
+}
+
+.alignwell {
+  margin: 10px;
+  color: #db9826;
+}
+
+.alignwell p {
+  font-size: 1.2rem;
+  color: #70706f;
+  margin: 20px;
 }
