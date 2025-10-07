@@ -2,16 +2,17 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #22203f, #0d0d0d);
-  color: #f0f0f0;
+  background: linear-gradient(to right, #780206, #061161 ); /*#360033, #0b8793*/
+  color: #f2eeee;
   line-height: 1.6;
 }
 
 header {
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #22203f, #0d0d0d);
-  border-bottom: 2px solid #d4af37;
+  padding: 1rem;
+  
+
+  border-bottom: 0.2px solid #d4af37;
 }   
 
 header h1 {
@@ -50,12 +51,14 @@ nav a:hover {
 
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #22203f, #0d0d0d);
+  padding: .5rem 1rem;
+  background: linear-gradient(to right, #870000, #190a05 40%);
+  border-bottom: 0.2px solid #d4af37;
+  
 }
 
 .hero h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #db9826;
 }
@@ -70,15 +73,20 @@ nav a:hover {
 }
 
 .project {
-  background: linear-gradient(10deg, #488cc0, #0d0d0d);
+  background: linear-gradient(to right, #780206, #061161 ); /*#3d3c4f*/ /*#360033,#0b8793*/
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  color:#9e9a9a;
   transition: transform 0.3s;
+  
+  
+  box-shadow: 0 1px 3px rgba(235, 235, 234, 0.6);
 }
 
 .project:hover {
   transform: translateY(-5px);
+  box-shadow: 0 2px 4px rgba(235, 235, 234, 0.8);
+  border-left: .1px solid #f2f0ee;
 }
 
 .documents:hover {
@@ -118,8 +126,9 @@ nav a:hover {
 
 .tag {
   display: inline-block;
-  background: linear-gradient(10deg, #22203f, #0d0d0d);
-  color: #f0f0f0;
+  
+  box-shadow: 0 1px 3px rgba(235, 235, 234, 0.6);
+  color: #f2eeee;
   border-radius: 4px;
   padding: 0.2rem 0.5rem;
   margin: 0.2rem;
@@ -128,8 +137,8 @@ nav a:hover {
 
 footer {
   text-align: center;
-  padding: 1.5rem;
-  background: #1a1a1a;
+  padding: .1rem;
+  background: #020202;
   border-top: 2px solid #d4af37;
   font-size: 0.9rem;
   color: #aaa;
@@ -148,6 +157,6 @@ a{
 
 .alignwell p {
   font-size: 1.2rem;
-  color: #70706f;
+  color: #f2eeee;
   margin: 20px;
 }
