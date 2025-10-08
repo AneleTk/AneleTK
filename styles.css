@@ -106,7 +106,7 @@ nav a:hover {
 .standaloneIMG img {
   display: block;
                   /*530px*/
-  height: 30rem; /*530px*/
+  width:50%; /*530px*/
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
