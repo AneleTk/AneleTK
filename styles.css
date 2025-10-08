@@ -1,10 +1,11 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   background: linear-gradient(to right, #780202, #061161 ); /*#360033, #0b8793*/
   color: #f2eeee;
   line-height: 1.6;
+ font-size:
 }
 
 header {
@@ -51,7 +52,7 @@ nav a:hover {
 
 .hero {
   text-align: center;
-  padding: .5rem 1rem;
+  padding: .3rem 1rem;
   background: linear-gradient(to right, #870000, #190a05 40%);
   border-bottom: 0.2px solid #d4af37;
   
@@ -104,8 +105,8 @@ nav a:hover {
 
 .standaloneIMG img {
   display: block;
-  width: 530px;
-  height: 450px;
+                  /*530px*/
+  height: 30rem; /*530px*/
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
