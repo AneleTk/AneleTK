@@ -136,6 +136,18 @@ nav a:hover {
   font-size: 0.85rem;
 }
 
+table, th, td {
+  border: 1px solid #ddd;
+  width: 80%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  margin: 20px 0;
+  padding: 8px;
+  table-layout: fixed;
+  text-align: left;
+  color:#f2eeee
+}
+
 footer {
   text-align: center;
   padding: .1rem;
