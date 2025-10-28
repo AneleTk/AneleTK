@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Packet Analysis</title>
+  <meta name="description" content="Portfolio website for Tankiso Phoofolo — SIEM, Splunk dashboards, log analysis." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <!--<h1>Tankiso Phoofolo</h1>-->
+    <p><h2>Mapping IDS alerts to the MITRE ATT&CK framework </h2></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <!--<a href="#contact">Contact</a>-->
+    </nav>
+  </header>
+
+  
+  <section class="standaloneIMG">
+     <img src="Images/Wireshark/Wireshark_Snort logs_login.htm.png" alt="hydra">
+  </section>
+</br>
+<div class="alignwell">
+<h4>The objective of this project was to solidify my understanding of exactly how vulnerabilities scanners
+    work, how IDSs detect malicious activity, and how to map these to the MITRE ATT&CK framework.
+    To achieve this, I generated attack traffic using a vulnerabilty scanner, then I analysed packets and 
+    IDS alerts in Wireshark, then mapped them to the MITRE ATT&CK framework.
+  
+  </br>
+</h4>
+
+
+
+
+    <table>
+        <tr>
+        <th colspan="2">MITRE ATT&CK Mapping</th>
+        </tr>
+        <tr>
+        <td><strong>Tactic</strong></td>
+        <td>Reconnaissance (TA0043) & Initial Access (TA0001)</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Technique</strong></td>
+        <td>Active Scanning (T1595) </td>
+        
+        </tr>
+        <tr>
+        <td><strong>Possible Tools/method</strong></td>
+        <td>Nessus, Burp Suite, Nmap Scripts, Nikto</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Detection Source</strong></td>
+        <td>Snort alert -(SID 1564 -“WEB-MISC login.htm access”)</td>
+                
+        </tr>
+
+        <tr>
+        <td><strong>Impact</strong> </td>
+        <td>Network reconnaissance or probing of web login pages (Enumeration). 
+            Possible precursor to a vulnerability scan or credential brute-force (severity: Medium)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Mitigations</strong></td>
+        <td>Network segmentation (e.g DMZ), Access control, Rate-limiting, MFA, etc</td>
+        </tr>
+
+        <tr>
+        <td><strong>Snort IDS rule </strong></td>
+        <td>alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS </td>
+        </tr>
+
+        <tr>
+        <td id="tableIMG" colspan="2" ><a href="Images/Wireshark/Wireshark_Snort logs_login.htm.png"><img src="Images/Wireshark/Wireshark_Snort logs_login.htm.png"></a></td>
+        
+        </tr>
+    </table>
+    </br>
+
+     <table>
+        <tr>
+        <th colspan="2">MITRE ATT&CK Mapping</th>
+        </tr>
+        <tr>
+        <td><strong>Tactic</strong></td>
+        <td>Initial Access (TA0001) & Discovery (TA0007)</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Technique</strong></td>
+        <td>Exploit Public-Facing Application (T1190)</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Possible Tools/method</strong></td>
+        <td>Nessus, Nikto, Burp Suite, Metasploit, and Nmap</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Detection Source</strong></td>
+        <td>Snort alert -(SID 993 -“WEB-IIS iisadmin access”)</td>
+                
+        </tr>
+
+        <tr>
+        <td><strong>Impact</strong> </td>
+        <td>Attempted access to Microsoft IIS admin interface, a known target for attackers due to past 
+            vulnerabilities in IIS and its administrative web components (severity: High)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Mitigations</strong></td>
+        <td>Network segmentation, Access restriction, IPS, etc</td>
+        </tr>
+
+        <tr>
+        <td><strong>Snort IDS rule </strong></td>
+        <td>alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS </td>
+        </tr>
+
+        <tr>
+        <td id="tableIMG" colspan="2" ><a href="Images/Wireshark/Wireshark_Snort logs_P2P.png"><img src="Images/Wireshark/Wireshark_Snort logs_P2P.png"></a></td>
+        
+        </tr>
+    </table>
+    </br>
+
+     <table>
+        <tr>
+        <th colspan="2">MITRE ATT&CK Mapping</th>
+        </tr>
+        <tr>
+        <td><strong>Tactic</strong></td>
+        <td>Credential Access (TA0006) and Discovery (TA0007)</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Technique</strong></td>
+        <td>Exfiltration Over Unencrypted Channel (T1048.003) and File and Directory Discovery (T1083)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Possible Tools/method</strong></td>
+        <td>Nessus, Nikto, Burp Suite, Metasploit, etc</td>
+        </tr>
+
+        <tr>
+        <td><strong>Detection Source</strong></td>
+        <td>Snort alert - (SID 1122 -“WEB-MISC /etc/passwd)
+         -(SID 1113 -“WEB-MISC http directory traversal”)
+        </td>
+        </tr>
+
+        <tr>
+        <td><strong>Impact</strong> </td>
+        <td>Attempted sensitive local file access (/etc/passwd) and
+             directory traversal exploit (severity: Medium)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Mitigations</strong></td>
+        <td>Network segmentation, Access restriction, IPS, Exploit protection (e.g patches)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Snort IDS rule </strong></td>
+        <td>alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS </td>
+        </tr>
+
+        <tr>
+        <td id="tableIMG" colspan="2" ><a href="/Images/Wireshark/Wireshark_Snort logs_Directory traversal and Credential access.png"><img src="/Images/Wireshark/Wireshark_Snort logs_Directory traversal and Credential access.png"></a></td>
+        
+        </tr>
+    </table>
+    </br>
+
+    <table>
+        <tr>
+        <th colspan="2">MITRE ATT&CK Mapping</th>
+        </tr>
+        <tr>
+        <td><strong>Tactic</strong></td>
+        <td>Discovery (TA0007)</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Technique</strong></td>
+        <td>System Information Discovery (T1082)</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Possible Tools/method</strong></td>
+        <td>Nessus, Nmap SNMP scripts, get-next-request queries to obtain info</td>
+        
+        </tr>
+        <tr>
+        <td><strong>Detection Source</strong></td>
+        <td>Snort alert - (SID 1411 - “SNMP public access udp”)</br>
+        - (SID 1417 - “SNMP request udp”)</br>
+        - (SID 1418 - “SNMP request tcp”)</td>
+                
+        </tr>
+
+        <tr>
+        <td><strong>Impact</strong> </td>
+        <td>Potential system configuration and topology Information leak 
+            via SNMP (severity: Medium)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Mitigations</strong></td>
+        <td>Upgrade to SNMPv3, Disable SNMP, Restrict access to UDP/TCP 161, etc</td>
+        </tr>
+
+        <tr>
+        <td><strong>Snort IDS rule </strong></td>
+        <td>alert udp $EXTERNAL_NET any -> $HOME_NET 161</td>
+        </tr>
+
+        <tr>
+        <td id="tableIMG" colspan="2" ><a href="/Images/Wireshark/Wireshark_Snort logs_SNMP.png"><img src="/Images/Wireshark/Wireshark_Snort logs_SNMP.png"></a></td>
+        
+        </tr>
+    </table>
+    </br>
+
+    <table>
+        <tr>
+        <th colspan="2">MITRE ATT&CK Mapping</th>
+        </tr>
+        <tr>
+        <td><strong>Tactic</strong></td>
+        <td>Command and Control (TA0011)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Technique</strong></td>
+        <td>Application Layer Protocol (T1071)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Possible Tools/method</strong></td>
+        <td></td>
+        </tr>
+
+        <tr>
+        <td><strong>Detection Source</strong></td>
+        <td>Snort alert -(SID 556 -“P2P Outbound GNUTella client request”)
+        - (SID 1432 –“P2P GNUTella client request”)
+        </td>
+        </tr>
+
+        <tr>
+        <td><strong>Impact</strong> </td>
+        <td>Possible exfiltration, unauthorized file-sharing over corporate network, 
+             or covert C2 communication (severity: High)</td>
+        </tr>
+
+        <tr>
+        <td><strong>Mitigations</strong></td>
+        <td>Restrict P2P traffic, enforce acceptable-use policies prohibiting P2P software on corporate devices, EDR tools</td>
+        </tr>
+
+        <tr>
+        <td><strong>Snort IDS rule </strong></td>
+        <td>alert tcp $HOME_NET any -> $EXTERNAL_NET any </td>
+        </tr>
+
+        <tr>
+        <td id="tableIMG" colspan="2" ><a href="/Images/Wireshark/Wireshark_Snort logs_P2P.png"><img src="/Images/Wireshark/Wireshark_Snort logs_P2P.png"></a></td>
+        
+        </tr>
+    </table>
+    </br>
+    
+    
+    
+
+<h5>Key skills applied & strengthened:</h5>
+<p>- Vulnerability analysis with Nessus </br>
+- IDS rules </br>
+- Using Snort Post-Dissector to view Snort alerts in Wireshark </br>
+- Blue-Teaming </br>
+
+</p>
+
+<h5>This setup allowed me to instantly correlate intrusion alerts with the exact packets that triggered them and how to modify IDS/IPS rules.</h5>
+</div>
+  
+
+  <footer>
+    <p>© 2025 Tankiso Phoofolo - Portfolio</p>
+  </footer>
+</body>
+</html>
