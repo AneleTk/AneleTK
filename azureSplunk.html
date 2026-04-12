@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MS Azure-to-Splunk</title>
+  <meta name="description" content="Portfolio website for Tankiso Phoofolo — SIEM, Splunk dashboards, log analysis." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <!--<h1>Tankiso Phoofolo</h1>-->
+    <h2>Microsoft Azure-to-Splunk SIEM Pipeline Integration</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <!--<a href="#contact">Contact</a>-->
+    </nav>
+  </header>
+
+  
+  <section class="standaloneIMG">
+     <img src="Images/Microsoft Azure/Azure_profile pic.jpg" alt="Azure-Splunk SPL query screenshot">
+  </section>
+
+<div class="alignwell">  
+
+<h4>I implemented an end-to-end SIEM pipeline integrating Azure activity logs and security alerts into Splunk Enterprise.
+    The solution uses Azure Event Hubs for real-time log ingestion and enables centralized monitoring and analysis of cloud 
+    activity within the Splunk SIEM environment.</h4>
+</h4>
+ 
+ <h5></h5>
+   <p> <strong>Technical Architecture:</strong><br><br>
+    - <strong>SIEM:</strong> Splunk Enterprise<br>
+    - <strong>Cloud Platform:</strong> Microsoft Azure<br>
+    - <strong>Data Transport:</strong> Azure Event Hubs (Standard Tier)<br>
+    - <strong>Data Storage:</strong> Azure Blob Storage (Cold Tier)<br>
+    - <strong>Data Ingestion:</strong> Splunk Add-on for Microsoft Cloud Services<br>
+    - <strong>Security Monitoring:</strong> Microsoft Defender for Cloud (Foundational CSPM)<br>
+    
+   </p> 
+
+    <p><strong>Key Challenges and Solutions</strong></p>
+    <table>
+        <tr>
+        <th>Challenge</th>
+        <th>Solution</th>
+        
+        </tr>
+        <tr>
+        <td>Consumer Group Conflicts</td>
+        <td>Upgraded to Event Hubs Standard Tier to enable dedicated Consumer Groups, preventing connection drops</td>
+        </tr>
+
+        <tr>
+        <td>Persistence and State</td>
+        <td>Configured Azure Blob Storage for checkpointing, ensuring Splunk resumes data collection from the
+            exact last event after a restart or failure, preventing data loss and duplication</td>
+        </td>
+        </tr>
+ 
+        <tr>
+        <td>Authentication</td>
+        <td>Implemented Service Principal (App registration) with RBAC roles (Data Receiver and Blob Contributor)
+            for secure access </td>
+        </tr>
+
+        <tr>
+        <td>Data gaps</td>
+        <td>Identified and corrected a misconfiguration in Subscription-level Diagnostic Settings to capture all necessary logs (Security, Administrative, etc)</td>
+        </tr>
+        </td>
+        </table><br>
+
+ 
+<p> <strong>Implementation Steps:</strong><br><br>
+    - <strong>Identity Management:</strong> Created an Azure App Registration and granted scoped RBAC permissions to allow Splunk to read Event hub data
+    and write to Storage. <br>
+    - <strong>Streaming Infrastructure:</strong> Provisioned an Event Hub Namespace and specific hub. Configured a dedicated "splunk-final" Consumer Group to
+    ensure exclusive throughput.<br>
+    - <strong>Logging Configuration:</strong> Established a Subscription-level Diagnostic Setting configuration to capture Security, Administrative, ServiceHealth, and Policy logs.<br>
+    - <strong>Splunk Integration:</strong> Configured the Splunk Add-on for Microsoft Cloud Services, mapping the Event Hub FQDN and Storage Account for checkpointing.<br>
+    - <strong>Visualization:</strong> Built a custom Splunk Dashboard to monitor event distribution by category.<br>
+   
+    
+   </p> 
+
+<h4>Microsoft Azure is quite overwhelming at first, but it is clear that the work is scalable and becomes easier as you go along. This project was by far the most difficult for me, even more than deploying Splunk from scratch. However, the skills and experience gained made it well worth it.</h4>
+</div>
+  
+
+  <footer>
+    <p>© 2025 Tankiso Phoofolo - Portfolio</p>
+  </footer>
+</body>
+</html>
