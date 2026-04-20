@@ -59,28 +59,28 @@
         
         </tr>
         <tr>
-        <td>Consumer Group Conflicts</td>
-        <td>Upgraded to Event Hubs Standard Tier to enable dedicated Consumer Groups, preventing connection drops</td>
+        <td>Limited Consumer Groups causing errors and connection drops</td>
+        <td>Upgraded to Event Hubs Standard Tier to enable dedicated Consumer Groups and allow Splunk Add-on to maintain an exclusive connection.</td>
         </tr>
 
         <tr>
         <td>Persistence and State</td>
         <td>Configured Azure Blob Storage for checkpointing, ensuring Splunk resumes data collection from the
-            exact last event after a restart or failure, preventing data loss and duplication</td>
+            exact last event after a restart or failure, preventing data loss and duplication.</td>
         </td>
         </tr>
- 
+        <!--
         <tr>
         <td>Authentication</td>
         <td>Implemented Service Principal (App registration) with RBAC roles (Data Receiver and Blob Contributor)
-            for secure access </td>
+            for secure access. </td>
         </tr>
 
         <tr>
         <td>Data gaps</td>
-        <td>Identified and corrected a misconfiguration in Subscription-level Diagnostic Settings to capture all necessary logs (Security, Administrative, etc)</td>
+        <td>Identified and corrected a misconfiguration in Subscription-level Diagnostic Settings to capture all necessary logs (Security, Administrative, etc).</td>
         </tr>
-        </td>
+        </td>-->
         </table><br>
 
  
@@ -96,7 +96,7 @@
     
    </p> 
 
-<h4>Microsoft Azure is quite overwhelming at first, but it is clear that the work is scalable and becomes easier as you go along. This project was by far the most difficult for me, even more than deploying Splunk from scratch. However, the skills and experience gained made it well worth it.</h4>
+<h4>Microsoft Azure is quite overwhelming at first, but it is clear that the work is scalable and becomes easier as you go along. This project was quite difficult for me, however, the skills and experience gained made it well worth it.</h4>
 </div>
   
 

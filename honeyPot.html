@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18087214398"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18087214398');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Azure Honeypot</title>
+  <meta name="description" content="Portfolio website for Tankiso Phoofolo — SIEM, Splunk dashboards, log analysis." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <!--<h1>Tankiso Phoofolo</h1>-->
+    <h2>Microsoft Azure Honeypot & SIEM Integration</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <!--<a href="#contact">Contact</a>-->
+    </nav>
+  </header>
+
+  
+  <section class="standaloneIMG">
+     <img src="Images/Azure VM Honeypot/Dashboard and SPL Query Combined.png" alt="Honeypot-Splunk dashboard screenshot">
+  </section>
+
+<div class="alignwell">  
+
+<h4>I configured an Azure-hosted virtual machine combined with an Intrusion Prevention System (IPS) as a honeypot. 
+</h4>
+
+ 
+<p>
+    <strong>Honeypot Deployment on Azure:</strong><br>
+    - Set up a disposable internet-facing ubuntu virtual machine <br>
+    - Moved real administrative SSH access to a random port <br>
+    - Configured the Network Security Group (NSG) to allow public traffic to port 22 <br>
+    - Configured the Network Security Group (NSG) to block all traffic from the VM to prevent it from being used as a bot <br>
+    - Installed and configured Fail2Ban IPS to track and ban aggressive IP addresses on port 22<br>
+
+</p>
+
+<p>
+     <strong>Log Collection:</strong><br>
+     - Azure VM (honeypot) generates authentication logs (e.g., SSH login attempts)<br>
+     - Azure Monitor Agent (AMA) collects Syslogs and sends them to a Log Analytics Workspace using Data Collection Rules (DCR)<br>
+     - Log Analytics streams/exports logs to Azure Event Hubs<br>
+     - Splunk Add-on for Microsoft Cloud Services ingests logs from Event Hubs into Splunk Enterprise<br>
+     - Splunk Enterprise processes and visualizes the logs for security monitoring and analysis
+
+</p>
+
+ 
+
+    <p><strong>Key Challenges and Solutions</strong></p>
+    <table>
+        <tr>
+        <th>Challenge</th>
+        <th>Solution</th>
+        
+        </tr>
+        <tr>
+        <td>The default Azure "Diagnostic Settings" menu pushed for the old Linux Diagnostic Extension (LAD), which is being retired in March 2026.</td>
+        <td>Used the modern Azure Monitor Agent (AMA) by creating a custom Data Collection Rule (DCR), future-proofing the implementation.</td>
+        </tr>
+
+        <tr>
+        <td>Azure restricted Ubuntu Syslog data to only be sent to Log Analytics Workspaces, hiding the "Event Hub" option for Splunk export</td>
+        <td>Used Log Analytics and created a Data Export rule. This mirrored data from the workspace to the Event Hub.</td>
+        </td>
+        </tr>
+ 
+        <tr>
+        <td>Fail2Ban IPS failing to start</td>
+        <td>Discovered that the jail.local file had a duplicate configuration header. Rectified the error, started the service, and confirmed that malicious IPs were being banned.</td>
+        </tr>
+
+        <tr>
+        <td>Sending only necessary logs to Splunk</td>
+        <td>Configured the DCR to filter specifically for AUTH and AUTHPRIV logs, capturing only critical security login events.</td>
+        </tr>
+        </td>
+        </table><br>
+
+ 
+
+
+<h4>Building this honeypot was a stark reminder of how hostile the internet is. 
+    Within minutes of deployment, it was targeted by numerous automated attacks, highlighting the importance of proactive security measures.</h4>
+</div>
+  
+
+  <footer>
+    <p>© 2025 Tankiso Phoofolo - Portfolio</p>
+  </footer>
+</body>
+</html>
