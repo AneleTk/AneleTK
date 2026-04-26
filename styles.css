@@ -193,3 +193,27 @@ a{
   color: #f2eeee;
   margin: 20px;
 }
+
+/* ICONS */
+.contact-icons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;  /* align at the center */
+  align-items: center;
+  margin-top: 12px;
+}
+
+/*.contact-icons i {
+  width: 22px;
+  height: 22px;
+  color: white;
+  transition: all 0.3s ease;
+  stroke-width: 1.8; 
+}*/
+
+.contact-icons a:hover {
+  color: #db9826; 
+  transform: translateY(-0.5px);
+  transition: all 1.9s ease;
+  
+}
