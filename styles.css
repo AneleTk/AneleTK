@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  background: linear-gradient(to right, #780202, #061161 ); /*#360033, #0b8793*/
+  background: linear-gradient(to right, #780202, #0a0b0b, #0a0b0b); /*#360033, #0b8793*/
   color: #f2eeee;
   line-height: 1.6;
  font-size:
@@ -13,13 +13,13 @@ header {
   padding: 1rem;
   
 
-  border-bottom: 0.2px solid #d4af37;
+  border-bottom: 0.01px solid #d4af37;
 }   
 
 header h1 {
   margin: 0;
   font-size: 2.5rem;
-  color: #488cc0;
+  color: white;
 }
 
 header p {
@@ -53,10 +53,12 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: .3rem 1rem;
-  background: linear-gradient(to right, #870000, #190a05 40%);
-  border-bottom: 0.2px solid #d4af37;
+  background: linear-gradient(to right, #870000, #190a05 50%);
+  border-bottom: 0.01px solid #d4af37;
   
 }
+
+
 
 .hero h2 {
   font-size: 1.5rem;
@@ -74,7 +76,7 @@ nav a:hover {
 }
 
 .project {
-  background: linear-gradient(to right, #780206, #061161 ); /*#3d3c4f*/ /*#360033,#0b8793*/
+  background: linear-gradient(to right, #780206, #0a0b0b ); /*#3d3c4f*/ /*#360033,#0b8793*/
   border-radius: 10px;
   overflow: hidden;
   color:#9e9a9a;
@@ -131,10 +133,19 @@ nav a:hover {
   padding: 1rem;
 }
 
-.project-content h3 {
+.project h3 {
   margin-top: 0;
-  color: #db9826;
+  color: #db9326;
 }
+
+/*.project:hover p{
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.project:hover span {
+  color: #9e9a9a;
+  
+}*/
 
 .tags {
   margin-top: 0.5rem;
